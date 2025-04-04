@@ -61,7 +61,8 @@ jobs:
           tree .
           ls
           eval "$(micromamba shell hook --shell bash)"
-          conda list
+          micromamba activate
+          micromamba list
 
       - name: Build NCL
         run: |
