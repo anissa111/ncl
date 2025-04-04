@@ -58,7 +58,6 @@ jobs:
 
       - name: lookin
         run: |
-          tree .
           ls
           eval "$(micromamba shell hook --shell bash)"
           micromamba activate
@@ -68,6 +67,13 @@ jobs:
         run: |
           eval "$(micromamba shell hook --shell bash)"
           bash .build/mamba_build.sh
+      
+      - name: lookin x2
+        run: |
+          ls
+          eval "$(micromamba shell hook --shell bash)"
+          micromamba activate
+          micromamba list
 
       - name: Run tests
         run: |
