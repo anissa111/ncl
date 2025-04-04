@@ -55,12 +55,21 @@ jobs:
         with:
           environment-file: .build/envs/Linux.yml
 
+      - name: lookin
+        run: |
+          tree .
+          ls
+          eval "$(micromamba shell hook --shell bash)"
+          conda list
+
       - name: Build NCL
         run: |
+          eval "$(micromamba shell hook --shell bash)"
           bash .build/mamba_build.sh
 
       - name: Run tests
         run: |
+          eval "$(micromamba shell hook --shell bash)"
           ncl -V
           test "`ncl -V`" = "`cat version`"
           git clone https://github.com/NCAR/ncl_ci_test
