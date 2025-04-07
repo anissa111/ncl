@@ -6,7 +6,7 @@ export RECIPE_DIR="${SRC_DIR}/$(basename "${RECIPE_DIR}")"
 
 cd ${SRC_DIR}
 eval "$(micromamba shell hook --shell=bash)"
-source activate ncl_build 2>/dev/null || conda activate ncl_build
+source activate ncl_build 2>/dev/null || micromamba activate ncl_build
 
 export PREFIX="${CONDA_PREFIX}"
 export CXXFLAGS="-fPIC $CXXFLAGS"

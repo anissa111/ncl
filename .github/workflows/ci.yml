@@ -61,8 +61,8 @@ jobs:
           ls
           eval "$(micromamba shell hook --shell bash)"
           micromamba activate
-          conda activate ncl_build
-          conda list
+          micromamba activate ncl_build
+          micromamba list
 
       - name: Build NCL
         run: |
@@ -76,14 +76,14 @@ jobs:
           ls
           eval "$(micromamba shell hook --shell bash)"
           micromamba activate
-          conda activate ncl_build
+          micromamba activate ncl_build
           micromamba list
 
       - name: Run tests
         run: |
           eval "$(micromamba shell hook --shell bash)"
           micromamba activate
-          conda activate ncl_build
+          micromamba activate ncl_build
           ncl -V
           test "`ncl -V`" = "`cat version`"
           git clone https://github.com/NCAR/ncl_ci_test
