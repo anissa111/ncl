@@ -67,6 +67,8 @@ jobs:
         run: |
           eval "$(micromamba shell hook --shell bash)"
           bash .build/mamba_build.sh
+          echo "-- LOOK HERE --"
+          ncl -V
       
       - name: lookin x2
         run: |
