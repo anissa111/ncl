@@ -74,3 +74,5 @@ cp "$RECIPE_DIR/scripts/activate.sh" "$ACTIVATE_DIR/ncl-activate.sh"
 cp "$RECIPE_DIR/scripts/deactivate.sh" "$DEACTIVATE_DIR/ncl-deactivate.sh"
 
 conda list
+echo "-- ALSO HERE --"
+ncl -V
